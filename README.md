@@ -57,5 +57,31 @@ git commit -m "Разрешил конфликт слияния с веткой 
 
 git branch -d dev
 
+Пункты 11-13
+
+echo "Первое изменение - создание файла" > local\_changes.txt
+
+git add .
+
+git commit -m "Первое локальное изменение: создан файл local\_changes.txt"
+
+echo "Второе изменение - добавлена новая строка" >> local\_changes.txt
+
+git add .
+
+git commit -m "Второе локальное изменение: добавлена строка в файл"
+
+echo "Третье изменение - завершающие правки" >> local\_changes.txt
+
+git add .
+
+git commit -m "Третье локальное изменение: финальные правки"
+
+git reset --soft HEAD~1
+
+git status
+
+git checkout -b report
+
 
 
